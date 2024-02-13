@@ -12,7 +12,6 @@ RUN chmod +x ./analytics/app.py
 
 RUN pip install -r /src/analytics/requirements.txt
 
-
 EXPOSE 80
 
 CMD ["python", "/src/analytics/app.py"]
