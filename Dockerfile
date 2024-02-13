@@ -2,11 +2,12 @@ FROM python:3.10-slim-buster
 
 WORKDIR /src
 
-COPY ./app/requirements.txt requirements.txt
+COPY ./analytics/requirements.txt /src/analytics/requirements.txt
 
-RUN pip install -r requirements.txt
+RUN pip install -r /src/analytics/requirements.txt
 
-COPY ./app .
+COPY . .
 
-CMD python app.py
+EXPOSE 5153
 
+CMD ["python", "/src/analytics/app.py"]
