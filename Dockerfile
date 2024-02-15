@@ -2,8 +2,6 @@ FROM public.ecr.aws/docker/library/python:3.10-slim-buster
 
 WORKDIR /src
 
-COPY ./analytics/requirements.txt /src/analytics/requirements.txt
-
 RUN apt update -y && apt install -y build-essential libpq-dev
 
 COPY . .
