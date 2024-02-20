@@ -131,3 +131,6 @@ Please provide up to 3 sentences for each suggestion. Additional content in your
 * The Docker images use semantic versioning with three numbers separated by dots, e.g. `1.2.1` and  versioning is visible in the  screenshot. See [Semantic Versioning](https://semver.org/) for more details.
 
 Run pip install python-dotenv
+
+
+DB_USERNAME=postgres DB_PASSWORD=whMjDLkzkE python analytics/app.py
