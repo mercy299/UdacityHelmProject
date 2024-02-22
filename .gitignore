@@ -2,3 +2,4 @@
 ./minikube-linux-amd64
 ./python-virtual-environments/*
 ./myenv/*
+./aws/*
