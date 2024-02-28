@@ -1,23 +1,19 @@
-# This is a Kubernetes YAML configuration file that defines a Deployment resource.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helmproject
+  labels:
+    name: helmproject
 
-apiVersion: apps/v1  # Specifies the API version for this Kubernetes resource.
-kind: Deployment  # Defines the type of resource, in this case, a Deployment.
-
-metadata:  # Metadata section for the Deployment resource.
-  name: helmproject # The name assigned to this Deployment resource.
-
-spec: # Specifies the desired state of the Deployment.
-  replicas: 1 # Indicates that one replica Pod should be maintained.
-  
-  selector: # Defines how Pods are selected for this Deployment.
-    matchLabels: # Labels to match Pods for this Deployment.
-      app: helmproject  # Pods with the label "app: helmproject" will be selected.
-
-  template: # Describes the Pod template to be used for creating new Pods.
-    metadata: # Metadata for the Pod template.
-      labels: # Labels assigned to Pods created from this template.
-        app: helmproject # Pods created will have the label "app: helmproject".
-
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: helmproject
+  template:
+    metadata:
+      labels:
+        service: helmproject
     spec:
       containers:
       - name: helmproject
@@ -35,3 +31,31 @@ spec: # Specifies the desired state of the Deployment.
             port: 5050
           initialDelaySeconds: 5
           timeoutSeconds: 5
+
+        env:
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: db-env
+              key: DB_USERNAME
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: db-env
+              key: DB_NAME
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: db-env
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: db-env
+              key: DB_PORT
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: DB_PASSWORD
+      restartPolicy: Always

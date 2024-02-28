@@ -1,0 +1,37 @@
+# This is a Kubernetes YAML configuration file that defines a Deployment resource.
+
+apiVersion: apps/v1  # Specifies the API version for this Kubernetes resource.
+kind: Deployment  # Defines the type of resource, in this case, a Deployment.
+
+metadata:  # Metadata section for the Deployment resource.
+  name: helmproject # The name assigned to this Deployment resource.
+
+spec: # Specifies the desired state of the Deployment.
+  replicas: 1 # Indicates that one replica Pod should be maintained.
+  
+  selector: # Defines how Pods are selected for this Deployment.
+    matchLabels: # Labels to match Pods for this Deployment.
+      app: helmproject  # Pods with the label "app: helmproject" will be selected.
+
+  template: # Describes the Pod template to be used for creating new Pods.
+    metadata: # Metadata for the Pod template.
+      labels: # Labels assigned to Pods created from this template.
+        app: helmproject # Pods created will have the label "app: helmproject".
+
+    spec:
+      containers:
+      - name: helmproject
+        image: 978639590312.dkr.ecr.us-east-1.amazonaws.com/udaproject
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /health_check
+            port: 5050
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: "/readiness_check"
+            port: 5050
+          initialDelaySeconds: 5
+          timeoutSeconds: 5

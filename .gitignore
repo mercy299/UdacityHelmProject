@@ -3,3 +3,5 @@
 ./python-virtual-environments/*
 ./myenv/*
 aws/*
+./kubectl.sha256
+./aws/*
