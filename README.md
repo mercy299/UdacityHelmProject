@@ -29,6 +29,8 @@ N/B: You can build with `docker build udacity_pproject .`
 
      - You can push to amazon ecr with this command `docker push 196116466484.dkr.ecr.us-east-1.amazonaws.com/udacity_project:latest` 
 
+     - Don't forget to run a codebuild with your aws account.
+
 2. Kubernetes resources (e.g., Deployments, Services) are defined in YAML manifest files.
 3. Manifest files are applied to the cluster using `kubectl apply -f k8s/deployment.yml`; `kubectl apply -f k8s/configmap.yml`; `kubectl apply -f k8s/secrets.yml`.
 4. Rolling updates are performed using `kubectl set image` to update container images.
