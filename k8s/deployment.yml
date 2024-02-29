@@ -1,3 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helmproject
+spec:
+  selector:
+    app.kubernetes.io/name: helmproject
+  ports:
+    - name: "5050"
+      protocol: TCP
+      port: 5050
+      targetPort: 5050
+
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,7 +33,7 @@ spec:
     spec:
       containers:
       - name: helmproject
-        image: 978639590312.dkr.ecr.us-east-1.amazonaws.com/udaproject
+        image: 196116466484.dkr.ecr.us-east-1.amazonaws.com/udacity_project
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
