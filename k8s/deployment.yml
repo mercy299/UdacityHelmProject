@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: helmproject
-        image: 196116466484.dkr.ecr.us-east-1.amazonaws.com/udacity_project
+        image: 196116466484.dkr.ecr.us-east-1.amazonaws.com/udacityproject
         imagePullPolicy: Always
         livenessProbe:
           httpGet:

@@ -7,9 +7,9 @@ metadata:
 data:
   DB_USERNAME: "postgres"
   DB_NAME: "postgres"
-  DB_HOST: "helmproject.default.svc.cluster.local"
+  DB_HOST: "helmproject-postgresql.default.svc.cluster.local"
   DB_PORT: "5432"
-  ## DB_PASSWORD: ioFKD31skC
+  ## DB_PASSWORD: KaReqzTtHg
 metadata:
   name: db-env
 
