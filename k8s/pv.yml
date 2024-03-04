@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: helmproject-pv
+  name: my-manual-pv
 spec:
   capacity:
     storage: 1Gi
