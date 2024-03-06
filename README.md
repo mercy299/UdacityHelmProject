@@ -43,6 +43,12 @@ To access the Kubernetes cluster, follow these steps:
 2. Install `kubectl` and configure it to use the cluster.
 3. Use `kubectl` commands to interact with the cluster, such as `kubectl get pods`, `kubectl describe deployment`, etc.
 
+
+N/B: When you have an error that says `Error: INSTALLATION FAILED: Kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp [::1]:8080: connect: connection refused`
+You simply have to make sure that you have correctly connected your cluster from eks. 
+
+- When you try toconnect your cluster and you get a `Can't create directory for writing: [Errno 13] Permission denied: '/etc/rancher'`. This simply means you should try to export the kubeconfig, Just run this command `export KUBECONFIG=~/.kube/config`. 
+
 ## Troubleshooting
 
 If you encounter any issues with the Kubernetes cluster, you can use the following troubleshooting steps:
