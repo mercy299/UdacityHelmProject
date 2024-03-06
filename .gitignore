@@ -5,3 +5,4 @@
 aws/*
 ./kubectl.sha256
 ./aws/*
+./awscliv2.zip
