@@ -7,7 +7,6 @@ from flask import jsonify, request
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import and_, text, Column, Integer
 from random import randint
-
 from models import Token
 from config import app, db
 
