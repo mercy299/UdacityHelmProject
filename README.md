@@ -45,9 +45,9 @@ To access the Kubernetes cluster, follow these steps:
 
 
 N/B: When you have an error that says `Error: INSTALLATION FAILED: Kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp [::1]:8080: connect: connection refused`
-You simply have to make sure that you have correctly connected your cluster from eks.
+You simply have to make sure that you have correctly connected your cluster from eks. 
 
-Helm postgres also require a min of 10Gi on the persistent volume for it to run correctly.
+Helm postgres also require a min of 10G on the persistent volume for it to automatically bind and run correctly.
 
 - When you try toconnect your cluster and you get a `Can't create directory for writing: [Errno 13] Permission denied: '/etc/rancher'`. This simply means you should try to export the kubeconfig, Just run this command `export KUBECONFIG=~/.kube/config`. 
 
