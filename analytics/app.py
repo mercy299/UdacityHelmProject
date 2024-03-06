@@ -7,7 +7,8 @@ from flask import jsonify, request
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import and_, text, Column, Integer
 from random import randint
-from models.Token import Token
+
+from models import Token
 from config import app, db
 
 port_number = int(os.environ.get("APP_PORT", 5153))
