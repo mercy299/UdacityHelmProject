@@ -44,7 +44,7 @@ To access the Kubernetes cluster, follow these steps:
 3. Use `kubectl` commands to interact with the cluster, such as `kubectl get pods`, `kubectl describe deployment`, etc.
 
 
-N/B: When you have an error that says `Error: INSTALLATION FAILED: Kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp [::1]:8080: connect: connection refused`
+N/B: When you have an error that says `Error: INSTALLATION FAILED: Kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp [::1]:8080: connect: connection refused`,
 You simply have to make sure that you have correctly connected your cluster from eks. 
 
 Helm postgres also require a min of 10G on the persistent volume for it to automatically bind and run correctly.
