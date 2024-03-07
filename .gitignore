@@ -6,3 +6,4 @@ aws/*
 ./kubectl.sha256
 ./aws/*
 ./awscliv2.zip
+./AgentDependencies.tar.gz

@@ -60,6 +60,22 @@ If you encounter any issues with the Kubernetes cluster, you can use the followi
 3. Describe deployments: `kubectl describe deployment <deployment-name>`
 4. Diagnose networking: `kubectl get svc`, `kubectl describe svc`
 
+
+
+#kubectl port-forward --namespace default svc/helmproject-postgresql 5432:5432 &
+   #PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
+
+# kubectl run helmproject-postgresql-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:16.2.0-debian-12-r6 --env="PGPASSWORD=$POSTGRES_PASSWORD" \
+#       --command -- psql --host helmproject-postgresql -U postgres -d postgres -p 5432
+
+# PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5433
+
+#PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5433 < db/1_create_tables.sql
+
+#PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5433 < db/2_seed_users.sql
+
+#PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5433 < db/3_seed_tokens.sql
+
 ## Contributing
 
 This project is open source and contributions are welcome! If you'd like to contribute, please follow these steps:

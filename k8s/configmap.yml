@@ -9,4 +9,6 @@ data:
   DB_NAME: "postgres"
   DB_HOST: "helmproject-postgresql.default.svc.cluster.local"
   DB_PORT: "5432"
-  ## DB_PASSWORD: DWumjpgjw3
+  ## DB_PASSWORD: jEzBg0ATYI
+
+
